@@ -9,3 +9,12 @@ async function calculateInterest() {
     document.getElementById('result').innerHTML = "Simple Interest is "+interest['Interest'];
 
 }
+
+//debounced function (used with oninput in input tag)
+let timeout;
+function debouncedcalculateInterest() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+        calculateInterest();
+    },100);
+}
